@@ -48,6 +48,7 @@ variable "global_secondary_indexes" {
     non_key_attributes = list(string)
   }))
   description = "List of global secondary indexes"
+  default     = null
 }
 
 variable "enable_stream" {
