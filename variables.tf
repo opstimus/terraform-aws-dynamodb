@@ -35,8 +35,8 @@ variable "range_key_type" {
 
 variable "additional_attributes" {
   type = list(object({
-    name  = string
-    value = string
+    name = string
+    type = string
   }))
   description = "List of additional attributes"
   default     = []
