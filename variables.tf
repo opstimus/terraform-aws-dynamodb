@@ -33,6 +33,12 @@ variable "range_key_type" {
   default = "S"
 }
 
+variable "additional_attributes" {
+  type        = list(string)
+  description = "List of additional attributes"
+  default     = null
+}
+
 variable "ttl_attribute" {
   type        = string
   default     = null

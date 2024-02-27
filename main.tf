@@ -16,6 +16,14 @@ resource "aws_dynamodb_table" "main" {
     type = var.range_key_type
   }
 
+  dynamic "attribute" {
+    for_each = var.additional_attributes != null ? var.additional_attributes : []
+    content {
+      name = attribute.value.name
+      type = attribute.value.type
+    }
+  }
+
   ttl {
     enabled        = var.ttl_attribute != null ? true : false
     attribute_name = var.ttl_attribute
