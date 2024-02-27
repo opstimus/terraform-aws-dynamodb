@@ -49,15 +49,9 @@ variable "ttl_attribute" {
 }
 
 variable "global_secondary_indexes" {
-  type = list(object({
-    name               = string
-    hash_key           = string
-    range_key          = string
-    projection_type    = string
-    non_key_attributes = list(string)
-  }))
+  type        = list(any)
   description = "List of global secondary indexes"
-  default     = null
+  default     = []
 }
 
 variable "enable_stream" {
