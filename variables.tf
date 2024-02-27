@@ -34,9 +34,12 @@ variable "range_key_type" {
 }
 
 variable "additional_attributes" {
-  type        = list(string)
+  type = list(object({
+    name  = string
+    value = string
+  }))
   description = "List of additional attributes"
-  default     = null
+  default     = []
 }
 
 variable "ttl_attribute" {

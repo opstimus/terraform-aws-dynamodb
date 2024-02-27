@@ -17,7 +17,7 @@ resource "aws_dynamodb_table" "main" {
   }
 
   dynamic "attribute" {
-    for_each = var.additional_attributes != null ? var.additional_attributes : []
+    for_each = var.additional_attributes
     content {
       name = attribute.value.name
       type = attribute.value.type
