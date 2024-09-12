@@ -49,7 +49,7 @@ This example shows how to use the DynamoDB Table module to create a table with a
 
 ```hcl
 module "dynamodb_table" {
-  source        = "path_to_your_module"
+  source        = "github.com/opstimus/terraform-aws-dynamodb?ref=v<RELEASE>"
 
   project       = "my-project"
   environment   = "dev"
@@ -65,3 +65,4 @@ module "dynamodb_table" {
   ttl_attribute = "ttl"
   enable_stream = true
 }
+```
